@@ -14,11 +14,15 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ApiGatewayService = void 0;
 const common_1 = require("@nestjs/common");
+const rxjs_1 = require("rxjs");
 let ApiGatewayService = class ApiGatewayService {
     client;
     bffService;
     constructor(client) {
         this.client = client;
+    }
+    onModuleInit() {
+        this.bffService = this.client.getService('BffService');
     }
     create(createApiGatewayDto) {
         return 'This action adds a new apiGateway';
@@ -35,7 +39,9 @@ let ApiGatewayService = class ApiGatewayService {
     remove(id) {
         return `This action removes a #${id} apiGateway`;
     }
-    createProduct(productData) {
+    async createProduct(productData) {
+        const res = await (0, rxjs_1.lastValueFrom)(this.bffService.createProduct(productData));
+        return res;
     }
 };
 exports.ApiGatewayService = ApiGatewayService;

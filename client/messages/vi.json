@@ -1,0 +1,20 @@
+{
+  "Common": {
+    "title": "Hệ Thống Quản Lý Sản Phẩm",
+    "description": "Quản lý sản phẩm hiệu quả"
+  },
+  "Products": {
+    "title": "Sản Phẩm",
+    "add": "Thêm Sản Phẩm",
+    "edit": "Sửa Sản Phẩm",
+    "delete": "Xóa Sản Phẩm",
+    "name": "Tên Sản Phẩm",
+    "price": "Giá",
+    "description": "Mô Tả"
+  },
+  "Auth": {
+    "signIn": "Đăng Nhập",
+    "signOut": "Đăng Xuất",
+    "signInWith": "Đăng nhập với {provider}"
+  }
+}

@@ -37,8 +37,8 @@ message CreateProductRequest {
   string    description           = 2;
   repeated  Attribute attributes  = 3;
   repeated  Media media           = 4;
-  repeated  Inventory inventorys  = 5;
-  repeated  Metadata  Metadata    = 6;    
+  repeated  Inventory inventories  = 5;
+  //repeated  Metadata  metadata    = 6;    
 }
 
 message CreateProductResponse {

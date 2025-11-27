@@ -1,0 +1,20 @@
+{
+  "Common": {
+    "title": "Product Management System",
+    "description": "Manage your products efficiently"
+  },
+  "Products": {
+    "title": "Products",
+    "add": "Add Product",
+    "edit": "Edit Product",
+    "delete": "Delete Product",
+    "name": "Product Name",
+    "price": "Price",
+    "description": "Description"
+  },
+  "Auth": {
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "signInWith": "Sign in with {provider}"
+  }
+}

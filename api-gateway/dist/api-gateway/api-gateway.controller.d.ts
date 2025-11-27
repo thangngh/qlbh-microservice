@@ -10,5 +10,5 @@ export declare class ApiGatewayController {
     findOne(id: string): string;
     update(id: string, updateApiGatewayDto: UpdateApiGatewayDto): string;
     remove(id: string): string;
-    createProduct(productData: any, request: Request): void;
+    createProduct(productData: any, request: Request): Promise<any>;
 }
