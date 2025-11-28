@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { OrchestratorSaga } from './saga/orchestrator.saga';
 
 import { ClientsModule, Transport } from '@nestjs/microservices';
+import { KAFKA_CLIENT } from './constants';
 
 import { DatabaseModule } from './database/database.module';
 
@@ -12,14 +13,14 @@ import { DatabaseModule } from './database/database.module';
     DatabaseModule,
     ClientsModule.register([
       {
-        name: 'KAFKA_CLIENT',
+        name: KAFKA_CLIENT,
         transport: Transport.KAFKA,
         options: {
           client: {
             brokers: ['localhost:9092'],
           },
           consumer: {
-            groupId: 'bff-client-consumer',
+            groupId: 'bff-consumer',
           },
         },
       },

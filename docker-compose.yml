@@ -46,6 +46,36 @@ services:
     volumes:
       - ./data/minio:/data
 
+  auth-service:
+    build:
+      context: ./auth-service
+      dockerfile: Dockerfile
+    ports:
+      - "3002:3002"
+    environment:
+      - JWT_SECRET=your-secret-key
+    depends_on:
+      - postgres
+    networks:
+      - microservices-network
+
+  user-service:
+    build:
+      context: ./user-service
+      dockerfile: Dockerfile
+    ports:
+      - "3003:3003"
+    environment:
+      - DATABASE_HOST=postgres
+      - DATABASE_PORT=5432
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=postgres
+      - DATABASE_NAME=qlbh
+    depends_on:
+      - postgres
+    networks:
+      - microservices-network
+
   media-service:
     build:
       context: ./engineer
